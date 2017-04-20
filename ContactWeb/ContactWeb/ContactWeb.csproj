@@ -45,11 +45,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.3.12\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.S3.3.3.5.12\lib\net45\AWSSDK.S3.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -174,11 +183,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ContactWebContext.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\AWSManager.cs" />
+    <Compile Include="Models\DatabaseManager.cs" />
+    <Compile Include="Models\KeyGenerator.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -251,6 +260,9 @@
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Shared\_EmployeeAccessPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.S3.3.3.5.12\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
