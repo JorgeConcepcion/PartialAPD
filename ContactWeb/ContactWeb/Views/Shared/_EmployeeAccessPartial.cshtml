@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    @Html.AntiForgeryToken()
+
+
+    <li>
+        @Html.ActionLink("New Employee", "Create", "Employees", new { area = "" }, new { @class = "dropdown-list collapse" })
+    </li>
+    <li>
+        @Html.ActionLink("Empoyee Access", "Index", "Employees", new { area = "" }, new { @class = "dropdown-list collapse" })
+    </li>
+  
+
+
+}
+else
+{
+
+}
+
